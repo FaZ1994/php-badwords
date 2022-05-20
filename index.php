@@ -1,7 +1,10 @@
+
 <?php
 $text = 'Il tiramisù si prepara con i pavesini';
-$text_rep = str_replace('pavesini', 'SAVOIARDI', $text);
-$text_banned = str_replace('pavesini', '***', $text);
+$wordBanned = $_GET['wordBanned'];
+$text_rep = str_replace($wordBanned, 'SAVOIARDI', $text);
+$text_banned = str_replace($wordBanned, '***', $text);
+
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +22,8 @@ $text_banned = str_replace('pavesini', '***', $text);
     <p><?php echo strlen($text_rep) ?></p>
     <p><?php echo $text_banned ?></p>
     <p><?php echo strlen($text_banned) ?></p>
+    
+
     
 </body>
 </html>
